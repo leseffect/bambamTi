@@ -53,7 +53,7 @@ export default async function handler(req, res) {
 위 정보를 바탕으로 핵심 지침에 맞추어 전문적인 학생 상담 전략을 제안해 주십시오.`;
 
   // 5. Gemini REST API 호출 (모델: gemini-2.5-pro)
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${apiKey}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
 
   try {
     const response = await fetch(url, {
