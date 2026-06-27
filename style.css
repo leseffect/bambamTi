@@ -384,3 +384,235 @@ button {
     width: 100%;
   }
 }
+
+/* AI 학생 상담 전략 도우미 스타일 */
+.ai-counseling-panel {
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+
+.counseling-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  margin-top: 18px;
+  align-items: start;
+}
+
+.counseling-settings,
+.counseling-result-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.counseling-settings {
+  gap: 16px;
+}
+
+.counseling-result-panel {
+  min-height: 480px;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.student-display-placeholder {
+  padding: 14px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--surface-strong);
+  text-align: center;
+}
+
+.counseling-info-split {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 12px;
+}
+
+.info-block {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.info-block strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.screen-only-info {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.send-only-info {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+}
+
+.info-block p {
+  margin: 2px 0;
+}
+
+textarea#teacherConcernInput {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  background: var(--surface);
+  color: var(--ink);
+  transition: border-color 0.2s;
+}
+
+textarea#teacherConcernInput:focus:not(:disabled) {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+textarea#teacherConcernInput:disabled {
+  background: var(--surface-strong);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.data-preview-block {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  color: #0f766e;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  overflow-x: auto;
+  max-height: 160px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.counseling-result-placeholder {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+}
+
+#counselingResult {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+#counselingResult h4 {
+  font-size: 16px;
+  margin: 18px 0 8px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+#counselingResult h4:first-of-type {
+  margin-top: 0;
+}
+
+#counselingResult p {
+  margin: 0 0 10px;
+}
+
+#counselingResult ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+#counselingResult li {
+  margin-bottom: 6px;
+}
+
+.counseling-disclaimer {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.spinner {
+  font-size: 28px;
+  animation: rotateSpinner 1.2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes rotateSpinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-placeholder {
+  color: var(--danger);
+  padding: 60px 20px;
+  text-align: center;
+  border: 1px dashed var(--danger);
+  border-radius: 8px;
+  background: #fef2f2;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* AI 상담 모바일 대응 */
+@media (max-width: 860px) {
+  .counseling-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .counseling-info-split {
+    grid-template-columns: 1fr;
+  }
+  
+  .counseling-result-panel {
+    min-height: auto;
+  }
+}
+
